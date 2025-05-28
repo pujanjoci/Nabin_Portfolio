@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Gallery | Nabin Shrestha</title>
+    <link rel="stylesheet" href="assets/newcss.css" />
+    <link rel="stylesheet" href="assets/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <style>
+      /* Gallery specific styles */
+      .gallery {
+        padding: 3rem 0;
+      }
+      
+      .gallery__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        gap: 1rem;
+        padding: 0 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .gallery__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .gallery__item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      
+      .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      
+      .gallery__item:hover .gallery__img {
+        transform: scale(1.05);
+      }
+      
+      /* Grid span classes */
+      .span-1x1 { grid-column: span 1; grid-row: span 1; }
+      .span-1x2 { grid-column: span 1; grid-row: span 2; }
+      .span-2x1 { grid-column: span 2; grid-row: span 1; }
+      .span-2x2 { grid-column: span 2; grid-row: span 2; }
+      .span-1x3 { grid-column: span 1; grid-row: span 3; }
+      .span-3x1 { grid-column: span 3; grid-row: span 1; }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .gallery__container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .span-3x1, .span-2x2 {
+          grid-column: span 2;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .gallery__container {
+          grid-template-columns: 1fr;
+        }
+        
+        .span-1x2, .span-2x1, .span-2x2, .span-3x1 {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body oncontextmenu="return false">
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">Nabin Shrestha</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="index.html#home" class="nav__link">
+                <i class="uil uil-estate nav__icon"></i>Home
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#about" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>About
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#portfolio" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Projects
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="index.html#contact" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact-Me
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="gallery.html" class="nav__link active-link">
+                <i class="uil uil-images nav__icon"></i>Gallery
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__btns">
+          <!-- Theme change button -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!--==================== GALLERY ====================-->
+      <section class="gallery section" id="gallery">
+        <h2 class="section__title">My Gallery</h2>
+        <span class="section__subtitle">Creative visual works</span>
+        
+        <div class="gallery__container">
+          <!-- Example gallery items with different spans -->
+          <div class="gallery__item span-1x1">
+            <img src="assets/img/portfolio1.jpg" alt="Project 1" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-2x1">
+            <img src="assets/img/portfolio2.jpg" alt="Project 2" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-1x2">
+            <img src="assets/img/portfolio3.jpg" alt="Project 3" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-1x1">
+            <img src="assets/img/portfolio4.jpg" alt="Project 4" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-1x1">
+            <img src="assets/img/portfolio5.jpg" alt="Project 5" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-2x2">
+            <img src="assets/img/portfolio6.jpg" alt="Project 6" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-1x1">
+            <img src="assets/img/portfolio7.jpg" alt="Project 7" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-3x1">
+            <img src="assets/img/portfolio8.jpg" alt="Project 8" class="gallery__img">
+          </div>
+          
+          <div class="gallery__item span-1x3">
+            <img src="assets/img/portfolio9.jpg" alt="Project 9" class="gallery__img">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container grid">
+          <div class="footer__info">
+            <h1 class="footer__title">Nabin Shrestha</h1>
+            <span class="footer__subtitle">Graphic Designer</span>
+          </div>
+
+          <ul class="footer__links">
+            <li><a href="index.html#qualification" class="footer__link">Qualification</a></li>
+            <li><a href="index.html#portfolio" class="footer__link">Portfolio</a></li>
+            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+          </ul>
+
+          <div class="footer__socials">
+            <a href="https://www.instagram.com/graphic_social24?igsh=MXN3Z3RnYWFzMzN1eQ==" class="footer__social" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/Venkateeshhh" class="footer__social" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2025 Nabin Shrestha. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!--================== SCROLL TOP ==================-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+    <script src="assets/ptj.js"></script>
+    <script src="assets/image.js"></script>
+  </body>
+</html>
